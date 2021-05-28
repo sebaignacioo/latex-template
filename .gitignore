@@ -1,0 +1,15 @@
+# General ignores
+**/_minted-*
+**/._*
+*.code-workspace
+
+# pdfTex compilation files
+*.aux
+*.log
+*.synctex.gz
+*.toc
+*.pdf
+
+# Include example PDF and PNG logo of PUCV
+!main.pdf
+!logo.png
