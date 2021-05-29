@@ -1,0 +1,64 @@
+\section{Gráfico}
+
+\subsection{Ejemplo de gráfico con ejes}
+
+\begin{center}
+    \begin{tikzpicture}
+        \begin{axis}[
+            inner axis line style={very thick, red},
+            axis x line = bottom,
+            axis y line = left,
+            domain = 0:500,
+            xlabel = x,
+            ylabel = y,
+            xmin = 0,
+            ymin = 0,
+            xmax = 510,
+            ymax = 510,
+            no marks,
+        ]
+            \addplot+[MyBlue, domain=0:510, very thick, name path=A]
+                coordinates {(0,0) (500,500)}
+                node[pos = 0.95](endofplot){};
+            \node[left, fill=MyBlue, text=white] at (endofplot) {$x > y$};
+            \addplot+[MyRed, domain=0:510, very thick, name path=B]
+                coordinates {(500,0) (0,500)}
+                node[pos = 0.05](endofplot){};
+            \node[left, fill=MyRed, text=white] at (endofplot) {$x + y \leq 500$};
+            \addplot+[draw=none, name path=C] {0};
+            \addplot+[draw=none, name path=D] {510};
+            \addplot+[MyBlue!50, fill opacity=0.5] 
+                fill between[of=A and C, soft clip={domain=0:510}];
+            \addplot+[MyRed!50, fill opacity=0.5] 
+                fill between[of=B and D, soft clip={domain=0:510}];
+            \addplot+[MyGreen!30] 
+                fill between[of=A and B, soft clip={domain=250:510}];
+            \filldraw[MyGreen] (360,140) circle (3pt);
+            \draw[arrow, MyGreen, very thick] (360,140) -- (420,200);
+            \filldraw[MyGreen] (360,360) circle (3pt);
+            \draw[arrow, MyGreen, very thick] (360,360) -- (420,300);
+            \node[fill=MyGreen, text=white] at (375, 250) {Soluciones factibles};
+        \end{axis}
+    \end{tikzpicture}
+\end{center}
+
+\subsection{Ejemplo de gráfico explicativo}
+
+\begin{center}
+    \begin{tikzpicture}
+        [%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        array/.style={rectangle,draw=DarkGrey, fill=LightGrey, text=DarkGrey, ultra thick, minimum size=1cm},
+        ]%%%
+
+        \foreach \x/\y in {0/7, 1/5, 2/13, 3/19, 4/12, 5/8, 6/7, 7/4, 8/21, 9/2}
+            \node[array] at (\x, 0){\y};
+        \foreach \x/\y in {0/0, 1/1, 2/2, 3/3, 4/4, 5/5, 6/6, 7/7, 8/8, 9/9}
+            \node[] at (\x, -0.75){\scriptsize \y};
+        
+        \node at (4.5, -1.75){\Large \mintinline{c}{int data[10];}};
+        \node at (4.5, -2.3){data es un \textbf{arreglo} de \mintinline{c}{int} de largo 10};
+
+        \draw[arrow, draw=MyBlue, ultra thick] (0, 0.5) -- (0,1) node[fill=MyBlue!75!white] at (0,1.3) {\mintinline{c}{data[0] = 7}};
+        \draw[arrow, draw=MyGreen!80!black, ultra thick] (5, 0.5) -- (5,1) node[fill=MyGreen!75!white] at (5,1.3) {\mintinline{c}{data[5] = 8}};
+    \end{tikzpicture}
+\end{center}
