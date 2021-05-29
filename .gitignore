@@ -2,6 +2,7 @@
 **/_minted-*
 **/._*
 *.code-workspace
+*.vscode
 
 # pdfTex compilation files
 *.aux
@@ -9,6 +10,8 @@
 *.synctex.gz
 *.toc
 *.pdf
+*.out
+*.xmpi
 
 # Include example PDF and PNG logo of PUCV
 !main.pdf

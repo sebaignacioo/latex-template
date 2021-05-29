@@ -1,0 +1,37 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% --------------------------- %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% | Personal LaTeX template | %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% | by Sebastian Garcia     | %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% | @sebaignacioo           | %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% |                         | %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% |          2021           | %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%% --------------------------- %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Se define la clase y parametros principales
+\documentclass[11pt, letterpaper]{sebaignacioo}
+
+% Usando paquete para importar archivos
+\usepackage{import}
+% Importando estilos
+\usepackage{styles}
+
+\begin{document}
+  
+  % Header
+  \import{common/}{header.tex}
+
+  % Contenidos
+  \tableofcontents
+  
+  \clearpage
+
+  % Cajas de contenido
+  \import{contents/}{1-boxes.tex}
+  \clearpage
+
+  % Gráficos
+  \import{contents/}{2-graphics.tex}
+  \clearpage
+
+\end{document}
