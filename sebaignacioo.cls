@@ -123,7 +123,7 @@ personal LaTeX template.]
 
 \newcommand{\sebaignacioo@add@image@left}[1]{%
   \appto{\sebaignacioo@left@images}{%
-    \@makeaimage{\sebaignacioo@image@diam@left}{#1}\hspace{1ex}%
+    \@makeaimage{\sebaignacioo@image@diam@left}{#1}\hspace{0.25ex}%
   }%
   \addtolength{\sebaignacioo@images@width}{\sebaignacioo@image@diam@left}%
   \addtolength{\sebaignacioo@images@width}{1ex}%
@@ -158,7 +158,7 @@ personal LaTeX template.]
     {\generalFont\color{header}Facultad de \@facultad\par}
     {\generalFont\color{header}\underline{Escuela de \@escuela}\par}
     \end{minipage}%
-    \begin{minipage}{(\dimexpr\linewidth-\sebaignacioo@images@width-3em)/2}%
+    \begin{minipage}{(\dimexpr\linewidth-\sebaignacioo@images@width-5em)/2}%
     \raggedleft%
     {\generalFont\color{header}\@claveAsignatura - \@nombreAsignatura\par}
     {\generalFont\color{header}Por \@nombre\par}
